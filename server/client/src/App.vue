@@ -198,7 +198,8 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 
-const API_BASE = 'http://localhost:4000/api'
+// 기존: const API_BASE = 'http://localhost:4000'
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:4000'
 const apps = ref([])
 const loading = ref(false)
 

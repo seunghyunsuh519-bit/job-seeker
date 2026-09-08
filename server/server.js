@@ -107,6 +107,10 @@ app.delete('/api/applications/:id', (req, res) => {
   res.json({ success: true })
 })
 
-app.listen(4000, () => {
-  console.log('서버가 포트 4000에서 실행 중입니다.')
+// 파일 상단 근처 또는 app.listen 바로 위에 선언
+const PORT = process.env.PORT || 4000
+
+// 기존: app.listen(4000, () => {
+app.listen(PORT, () => {
+  console.log(`서버가 포트 ${PORT}에서 실행 중입니다.`)
 })
